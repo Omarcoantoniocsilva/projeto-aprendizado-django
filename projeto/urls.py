@@ -20,12 +20,22 @@ from django.http import HttpResponse
 
 
 
-def my_view(request):
-    return HttpResponse('UMA LINDA STRING')
+def home(request):
+    return HttpResponse('HOME')
+
+
+def sobre(request):
+    return HttpResponse('SOBRE')
+
+
+def contato(request):
+    return HttpResponse('CONTATO')
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('outra-coisa-qualquer', my_view),
+    path('', home), # Home
+    path('sobre/', sobre), # /sobre/
+    path('contato/', contato), # /contato/
 ]
